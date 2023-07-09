@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import Heading from "../Heading/Heading";
-import styles from "./CovidProvinsi.module.css"
+import CovidProvinceStyled from "../../styled/CovidProvinceStyled";
+import GeneralConstant from "../../utils/constants/general";
 
 const CovidProvinsi = () => {
-    const { tableContainer } = styles;
     const tableData = [];
+
     const covids = useSelector((state) => state.provinces.provinces);
     const data = covids;
 
@@ -30,9 +31,9 @@ const CovidProvinsi = () => {
     }
     
     return (
-        <div>
-            <Heading titleText="Situation by Provinces" subtitleText="Data Covid berdasarkan Provinsi"/>
-            <div className={tableContainer}>
+        <CovidProvinceStyled>
+            <Heading titleText={GeneralConstant.PROVINCE_SITUATION} subtitleText={GeneralConstant.PROVINCE_SITUATION_DESC}/>
+            <div className="tableContainer">
                 <table>
                     <tr>
                         <th>No</th>
@@ -45,7 +46,7 @@ const CovidProvinsi = () => {
                         {tableData}
                 </table>
             </div>
-        </div>
+        </CovidProvinceStyled>
     )
 }
 

@@ -1,26 +1,24 @@
-import styles from "./DoubleItemBox.module.css"
+import DoubleItemBoxStyled from "../../styled/DoubleItemBoxStyled";
 
 const DoubleItemBox = (props) => {
-    const { container, title, subtitle } = styles;
-    const { name } = props;
-    const { numbers } = props;
+    const { name, numbers } = props;
 
     return (
-        <div className={container}>
-            <p className={title}>{name}</p>
-            <div style={{textAlign: "left"}}>
-                <p className={subtitle}>Confirmed</p>
+        <DoubleItemBoxStyled>
+            <p className="title">{name}</p>
+            <div className="status-row">
+                <p className="subtitle">Confirmed</p>
                 <p style={{color: "#06D6A0", marginTop: 0}}>{numbers.confirmed.toLocaleString()}</p> 
             </div>
-            <div style={{textAlign: "left"}}>
-                <p className={subtitle}>Recovered</p>
+            <div className="status-row">
+                <p className="subtitle">Recovered</p>
                 <p style={{color: "#118AB2", marginTop: 0}}>{numbers.recovered.toLocaleString()}</p> 
             </div>
-            <div style={{textAlign: "left"}}>
-                <p className={subtitle}>Death</p>
+            <div className="status-row">
+                <p className="subtitle">Death</p>
                 <p style={{color: "red",  marginTop: 0}}>{numbers.death.toLocaleString()}</p> 
             </div>
-        </div>
+        </DoubleItemBoxStyled>
     )
 }
 

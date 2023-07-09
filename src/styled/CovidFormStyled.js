@@ -1,5 +1,10 @@
-/* Small Screen */
-form {
+import styled from "styled-components";
+
+const CovidFormStyled = styled.div`
+margin: 1rem;
+padding: 2rem 10rem 2rem 10rem;
+
+section {
     display: block;
     margin: 20px 0 20px 0;
 }
@@ -27,11 +32,6 @@ select {
   padding-bottom: 10px;
   box-sizing: border-box;
 }
-
-.container {
-    margin: 1rem;
-    padding: 2rem 10rem 2rem 10rem;
-}
   
 .form {
     display: flex;
@@ -55,13 +55,13 @@ select {
     font-size: 2.44rem;
   }
   
-  .form__subtitle {
+  label {
     color: black;
     margin-bottom: 1rem;
     font-size: 1.5rem;
   }
   
-  .form__button {
+  button {
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
@@ -79,19 +79,15 @@ select {
   
   /* Medium Screen */
   @media (min-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+    flex-direction: column;
   }
   
   /* Large Screen */
   @media (min-width: 992px) {
-    .container {
-      max-width: 1200px;
-      margin: 3rem auto;
-    }
+    max-width: 1200px;
+    margin: 3rem auto;
   
-    .form {
+    section {
       margin: 0 1rem;
       flex-direction: row;
       justify-content: space-between;
@@ -107,3 +103,6 @@ select {
       flex-basis: 60%;
     }
   }
+`
+
+export default CovidFormStyled;

@@ -1,51 +1,51 @@
-/* Small Screen */
-.container {
-    background-color: #06D6A0;
-    padding: 2rem 10rem 2rem 10rem;
-    color: #fff;
-}
+import styled from "styled-components";
 
-.navbar {
+const NavbarStyled = styled.div`
+background-color: #06D6A0;
+padding: 2rem 10rem 2rem 10rem;
+color: #fff;
+
+nav {
 	display: flex;
 	flex-direction: column;
 }
 
-.navbar__brand {
+h1 {
 	font-size: 3rem;
     margin-top: 0;
 }
 
-/* Medium Screen */
 @media(min-width: 768px) {
-	.navbar {
+	nav {
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
 	}
 
-	.navbar__brand {
+	h1 {
 		margin-bottom: 0;
         font-size: 2rem;
 	}
 }
 
-/* Medium Screen */
 @media(max-width: 768px) {
-	.navbar {
+	nav {
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
 	}
 
-	.navbar__brand {
+	h1 {
 		margin-bottom: 0;
         font-size: 2rem;
 	}
 }
 
-/* Large Screen */
 @media(min-width: 992px) {
-    .navbar {
+    nav {
         flex-direction: row;
     }
 }
+`
+
+export default NavbarStyled;

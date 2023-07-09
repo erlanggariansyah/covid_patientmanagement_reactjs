@@ -1,21 +1,15 @@
-import styles from "./CovidForm.module.css"
 import { ReactComponent as ImageHeroFooter } from "../../assets/hero_img_form.svg"
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProvince } from "../../features/slices/provinceSlice";
+import CovidFormStyled from "../../styled/CovidFormStyled";
 
 const CovidForm = () => {
-    const { container, form, form__field, form__left, form__right, form__title, form__button, form__subtitle } = styles;
     const [formData, setFormData] = useState({ total: "", province: "", patientStatus: "" })
     const [ totalNull, setTotalNull ] = useState(false);
     const [ provinceNull, setProvinceNull ] = useState(false);
     const [ patientStatusNull, setPatientStatusNull ] = useState(false);
-    const covids = useSelector((state) => state.provinces.provinces)    
-    const button = <button className={form__button} type="submit">Submit</button>
-    const titleForm = <h2 className={form__title}>Form Covid</h2>
-    const covidTotal = <label className={form__subtitle}>Jumlah</label>
-    const covidProvince = <label className={form__subtitle}>Provinsi</label>
-    const covidStatus = <label className={form__subtitle}>Status</label>
+    const covids = useSelector((state) => state.provinces.provinces)
     const provinces = [];
     const dispatch = useDispatch();
 
@@ -83,15 +77,15 @@ const CovidForm = () => {
         <div>
             <form onSubmit={handleClick}>
                 { provinceNull ? <p>Provinsi wajib di isi.</p> : null }
-                <div className={form__field}>
-                    {covidProvince}
+                <div className="form__field">
+                    <label>Provinsi</label>
                     <select id="province" name="province" value={formData.province} onChange={handleChange}>
                         {provinces}
                     </select>
                 </div>
                 { patientStatusNull ? <p>Status wajib di isi.</p> : null }
                 <div className={form__field}>
-                    {covidStatus}
+                    <label>Provinsi</label>
                     <select id="patientStatus" name="patientStatus" value={formData.patientStatus} onChange={handleChange}>
                         <option value="dirawat" selected>Dirawat</option>
                         <option value="meninggal">Meninggal</option>
@@ -100,26 +94,26 @@ const CovidForm = () => {
                 </div>
                 { totalNull ? <p>Total wajib di isi.</p> : null }
                 <div className={form__field}>
-                    {covidTotal}
+                    <label>Jumlah</label>
                     <input id="total" value={formData.total} type="number" title={covidTotal} name="total" onChange={handleChange} />
                 </div>
-                {button}
+                <button type="submit">Submit</button>
             </form>
         </div>
     )
 
     return (
-        <div className={container}>
-            <section className={form}>
-                <div className={form__left}>
+        <CovidFormStyled>
+            <section>
+                <div className="form__left">
                     <ImageHeroFooter />
                 </div>
-                <div className={form__right}>
-                    {titleForm}
+                <div className="form__right">
+                    <h2 className="form__title">Form Covid</h2>
                     {covidForm}
                 </div>
             </section>
-        </div>
+        </CovidFormStyled>
     )
 }
 

@@ -1,23 +1,20 @@
+import FooterStyled from "../../styled/FooterStyled";
+import GeneralConstant from "../../utils/constants/general";
 import ItemList from "../ItemList/ItemList";
-import styles from "./Footer.module.css"
 
 const Footer = () => {
-    const { container, footer, footer__title, footer__author } = styles;
-    const title = <p className={footer__title}>Covid ID</p>;
-    const author = <p className={footer__author}>Developed by Erlangga Riansyah</p>;
-
     return (
-        <div className={container}>
-            <footer className={footer}>
+        <FooterStyled>
+            <footer>
                 <div>
-                    {title}
-                    {author}
+                    <p className="footer__title">{GeneralConstant.PROJECT_NAME}</p>
+                    <p className="footer__author">{GeneralConstant.PROJECT_CREDIT}</p>
                 </div>
                 <div>
                     <ItemList />
                 </div>
             </footer>
-        </div>
+        </FooterStyled>
     )
 }
 

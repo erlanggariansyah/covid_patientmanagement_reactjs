@@ -1,3 +1,6 @@
+import styled from "styled-components";
+
+const CovidInsightStyled = styled.div`
 .boxContainer {
     display: flex;
     flex-direction: row;
@@ -27,3 +30,6 @@
     text-align: center;
     margin: 1rem;
 }
+`
+
+export default CovidInsightStyled;

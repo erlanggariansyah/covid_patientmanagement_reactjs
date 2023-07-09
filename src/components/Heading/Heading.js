@@ -1,14 +1,13 @@
-import styles from "./Heading.module.css"
+import HeadingStyled from "../../styled/HeadingStyled";
 
 const Heading = (props) => {
-    const { container, title, subtitle } = styles;
     const { titleText, subtitleText } = props;
 
     return (
-        <div className={container}>
-            <p className={title}>{titleText}</p>
-            <p className={subtitle}>{subtitleText}</p>
-        </div>
+        <HeadingStyled>
+            <p className="title">{titleText}</p>
+            <p className="subtitle">{subtitleText}</p>
+        </HeadingStyled>
     )
 }
 

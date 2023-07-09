@@ -1,18 +1,16 @@
-import styles from "./Navbar.module.css"
 import ItemList from "../ItemList/ItemList";
+import NavbarStyled from "../../styled/NavbarStyled";
 
 const Navbar = () => {
-    const { container, navbar, navbar__brand } = styles;
-
     return (
-        <div className={container}>
-            <nav className={navbar}>
+        <NavbarStyled>
+            <nav>
                 <div>
-                    <h1 className={navbar__brand}>Covid ID</h1>
+                    <h1>Covid ID</h1>
                 </div>
                 <ItemList />
             </nav>
-        </div>
+        </NavbarStyled>    
     )
 }
 

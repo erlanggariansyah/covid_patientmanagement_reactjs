@@ -1,10 +1,11 @@
-.container {
-    background-color: #06D6A0;
-    color: #fff;
-    padding: 2rem 10rem 2rem 10rem;
-}
+import styled from "styled-components";
 
-.footer {
+const FooterStyled = styled.div`
+background-color: #06D6A0;
+color: #fff;
+padding: 2rem 10rem 2rem 10rem;
+
+footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,9 +22,11 @@
     font-size: 1.2rem;
 }
 
-/* Medium Screen */
 @media (max-width: 768px) {
-    .footer {
+    footer {
         flex-direction: column;
     }
 }
+`
+
+export default FooterStyled;

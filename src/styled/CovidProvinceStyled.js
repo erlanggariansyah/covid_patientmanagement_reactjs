@@ -1,3 +1,6 @@
+import styled from "styled-components";
+
+const CovidProvinceStyled = styled.div`
 table, td, tr, th {
     border: 1px solid gray;
     text-align: center;
@@ -25,16 +28,6 @@ td {
     padding: 1.5rem;
     font-size: 1rem;
 }
+`
 
-.boxContainer {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem 10rem;
-    justify-content: center;
-}
-
-.box {
-    text-align: center;
-    margin: 1rem;
-    flex-basis: calc(33.33% - 2rem);
-}
+export default CovidProvinceStyled;

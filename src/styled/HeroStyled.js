@@ -1,11 +1,11 @@
-/* Small Screen */
-.container {
-    margin: 1rem;
-    background-color: #fff;
-    color: #fff;
-  }
+import styled from "styled-components";
+
+const HeroStyled = styled.div`
+margin: 1rem;
+background-color: #fff;
+color: #fff;
   
-  .hero {
+  section {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -33,7 +33,7 @@
     font-size: 1.2rem;
   }
   
-  .hero__button {
+  button {
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
@@ -49,22 +49,11 @@
     border-radius: 25px;
   }
   
-  /* Medium Screen */
-  @media (min-width: 768px) {
-    /*
-     * Nothing TODO Here.
-     * We dont change style Hero. 
-     */
-  }
-  
-  /* Large Screen */
   @media (min-width: 992px) {
-    .container {
-      max-width: 1200px;
-      margin: 3rem auto;
-    }
+    max-width: 1200px;
+    margin: 3rem auto;
   
-    .hero {
+    section {
       margin: 0 1rem;
       flex-direction: row;
       justify-content: space-between;
@@ -80,3 +69,6 @@
       flex-basis: 60%;
     }
   }
+`
+
+export default HeroStyled;

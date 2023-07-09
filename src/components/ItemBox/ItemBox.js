@@ -1,7 +1,6 @@
-import styles from "./ItemBox.module.css"
+import ItemBoxStyled from "../../styled/ItemBoxStyled";
 
 const ItemBox = (props) => {
-    const { container, title, subtitle } = styles;
     const { titleText, subtitleText } = props;
     const conditionalColor = { color: 'black' }
     let titleTextFinal;
@@ -18,10 +17,10 @@ const ItemBox = (props) => {
     }
 
     return (
-        <div className={container}>
-            <p className={title}>{titleTextFinal}</p>
-            <p className={subtitle} style={conditionalColor}>{subtitleText.toLocaleString()}</p>
-        </div>
+        <ItemBoxStyled>
+            <p className="title">{titleTextFinal}</p>
+            <p className="subtitle" style={conditionalColor}>{subtitleText.toLocaleString()}</p>
+        </ItemBoxStyled>
     )
 }
 

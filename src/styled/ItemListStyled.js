@@ -1,4 +1,7 @@
-.item__list {
+import styled from "styled-components";
+
+const ItemListStyled = styled.div`
+ul {
 	display: flex;
 	flex-direction: column;
 	list-style: none;
@@ -6,16 +9,18 @@
 	text-align: center;
 }
 
-.item__item {
+li {
 	margin-bottom: 1rem;
 }
 
 @media(min-width: 768px) {
-	.item__list {
+	ul {
 		flex-direction: row;
 	}
 
-	.item__item {
+	li {
 		margin: 1rem;
 	}
 }
+`
+export default ItemListStyled;
