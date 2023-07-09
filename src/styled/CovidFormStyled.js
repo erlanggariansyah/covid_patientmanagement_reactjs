@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 const CovidFormStyled = styled.div`
-margin: 1rem;
-padding: 2rem 10rem 2rem 10rem;
+.container {
+    margin: 1rem;
+    padding: 2rem 10rem 2rem 10rem;
+}
 
 section {
     display: block;
@@ -77,15 +79,17 @@ select {
     border-radius: 25px;
   }
   
-  /* Medium Screen */
   @media (min-width: 768px) {
-    flex-direction: column;
+    .container {
+        flex-direction: column;
+    }
   }
-  
-  /* Large Screen */
+
   @media (min-width: 992px) {
-    max-width: 1200px;
-    margin: 3rem auto;
+    .container {
+        max-width: 1200px;
+        margin: 3rem auto;
+    }
   
     section {
       margin: 0 1rem;

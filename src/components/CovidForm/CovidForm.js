@@ -73,46 +73,44 @@ const CovidForm = () => {
         )
     }
 
-    const covidForm = (
-        <div>
-            <form onSubmit={handleClick}>
-                { provinceNull ? <p>Provinsi wajib di isi.</p> : null }
-                <div className="form__field">
-                    <label>Provinsi</label>
-                    <select id="province" name="province" value={formData.province} onChange={handleChange}>
-                        {provinces}
-                    </select>
-                </div>
-                { patientStatusNull ? <p>Status wajib di isi.</p> : null }
-                <div className={form__field}>
-                    <label>Provinsi</label>
-                    <select id="patientStatus" name="patientStatus" value={formData.patientStatus} onChange={handleChange}>
-                        <option value="dirawat" selected>Dirawat</option>
-                        <option value="meninggal">Meninggal</option>
-                        <option value="sembuh">Sembuh</option>
-                    </select>
-                </div>
-                { totalNull ? <p>Total wajib di isi.</p> : null }
-                <div className={form__field}>
-                    <label>Jumlah</label>
-                    <input id="total" value={formData.total} type="number" title={covidTotal} name="total" onChange={handleChange} />
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    )
-
     return (
         <CovidFormStyled>
-            <section>
-                <div className="form__left">
-                    <ImageHeroFooter />
-                </div>
-                <div className="form__right">
-                    <h2 className="form__title">Form Covid</h2>
-                    {covidForm}
-                </div>
-            </section>
+            <div className="container">
+                <section>
+                    <div className="form__left">
+                        <ImageHeroFooter />
+                    </div>
+                    <div className="form__right">
+                        <h2 className="form__title">Form Covid</h2>
+                        <div>
+                            <form onSubmit={handleClick}>
+                                { provinceNull ? <p>Provinsi wajib di isi.</p> : null }
+                                <div className="form__field">
+                                    <label>Provinsi</label>
+                                    <select id="province" name="province" value={formData.province} onChange={handleChange}>
+                                        {provinces}
+                                    </select>
+                                </div>
+                                { patientStatusNull ? <p>Status wajib di isi.</p> : null }
+                                <div className="form__field">
+                                    <label>Provinsi</label>
+                                    <select id="patientStatus" name="patientStatus" value={formData.patientStatus} onChange={handleChange}>
+                                        <option value="dirawat" selected>Dirawat</option>
+                                        <option value="meninggal">Meninggal</option>
+                                        <option value="sembuh">Sembuh</option>
+                                    </select>
+                                </div>
+                                { totalNull ? <p>Total wajib di isi.</p> : null }
+                                <div className="form__field">
+                                    <label>Jumlah</label>
+                                    <input id="total" value={formData.total} type="number" name="total" onChange={handleChange} />
+                                </div>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </CovidFormStyled>
     )
 }
