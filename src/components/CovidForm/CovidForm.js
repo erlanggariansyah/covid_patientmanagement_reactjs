@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProvince } from "../../features/slices/provinceSlice";
 import CovidFormStyled from "../../styled/CovidFormStyled";
+import GeneralConstant from "../../utils/constants/general";
 
 const CovidForm = () => {
     const [formData, setFormData] = useState({ total: "", province: "", patientStatus: "" })
@@ -86,14 +87,14 @@ const CovidForm = () => {
                             <form onSubmit={handleClick}>
                                 { provinceNull ? <p>Provinsi wajib di isi.</p> : null }
                                 <div className="form__field">
-                                    <label>Provinsi</label>
+                                    <label>{GeneralConstant.FORM_LABEL_PROVINCE}</label>
                                     <select id="province" name="province" value={formData.province} onChange={handleChange}>
                                         {provinces}
                                     </select>
                                 </div>
                                 { patientStatusNull ? <p>Status wajib di isi.</p> : null }
                                 <div className="form__field">
-                                    <label>Provinsi</label>
+                                    <label>{GeneralConstant.FORM_LABEL_STATUS}</label>
                                     <select id="patientStatus" name="patientStatus" value={formData.patientStatus} onChange={handleChange}>
                                         <option value="dirawat" selected>Dirawat</option>
                                         <option value="meninggal">Meninggal</option>
@@ -102,7 +103,7 @@ const CovidForm = () => {
                                 </div>
                                 { totalNull ? <p>Total wajib di isi.</p> : null }
                                 <div className="form__field">
-                                    <label>Jumlah</label>
+                                    <label>{GeneralConstant.FORM_LABEL_TOTAL}</label>
                                     <input id="total" value={formData.total} type="number" name="total" onChange={handleChange} />
                                 </div>
                                 <button type="submit">Submit</button>

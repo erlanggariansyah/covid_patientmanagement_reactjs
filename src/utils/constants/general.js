@@ -4,6 +4,10 @@ const GeneralConstant = {
     PROJECT_DESCRIPTION_SHORT: "Monitoring perkembangan Covid",
     PROJECT_CREDIT: "Developed by Erlangga Riansyah",
 
+    FORM_LABEL_PROVINCE: "Provinsi",
+    FORM_LABEL_STATUS: "Status",
+    FORM_LABEL_TOTAL: "Jumlah",
+
     GLOBAL_SITUATION: "Global Situation",
     GLOBAL_SITUATION_DESC: "Data Covid berdasarkan Global",
     INDONESIA_SITUATION: "Indonesia Situation",
