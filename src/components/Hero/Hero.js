@@ -3,6 +3,10 @@ import HeroStyled from "../../styled/HeroStyled";
 import GeneralConstant from "../../utils/constants/general";
 
 const Hero = () => {
+    const onClickVaccine = () => {
+        window.location.href = "https://covid19.go.id/vaksin-covid19";
+    }
+
     return (
         <HeroStyled>
             <section>
@@ -10,7 +14,7 @@ const Hero = () => {
                     <p className="hero__title">{GeneralConstant.PROJECT_NAME}</p>
                     <p className="hero__subtitle">{GeneralConstant.PROJECT_DESCRIPTION_SHORT}</p>
                     <p className="hero__description">{GeneralConstant.PROJECT_DESCRIPTION}</p>
-                    <button>{GeneralConstant.VACCINE}</button>
+                    <button onClick={onClickVaccine}>{GeneralConstant.VACCINE}</button>
                 </div>
                 <div className="hero__right">
                     <HeroImage />
