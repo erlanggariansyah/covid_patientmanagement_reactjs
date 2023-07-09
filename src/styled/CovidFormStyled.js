@@ -7,7 +7,7 @@ const CovidFormStyled = styled.div`
 }
 
 section {
-    display: block;
+    display: flex;
     margin: 20px 0 20px 0;
 }
 
@@ -48,6 +48,12 @@ select {
   
   .form__left {
     margin-bottom: 1rem;
+    margin-right: 2rem;
+  }
+  
+  .form__right {
+    margin-bottom: 1rem;
+    margin-left: 2rem;
   }
   
   .form__title {
@@ -101,10 +107,12 @@ select {
   
     .form__left {
       flex-basis: 60%;
+      margin-right: 0.5rem;
     }
   
     .form__right {
       flex-basis: 60%;
+      margin-left: 0.5rem
     }
   }
 `
